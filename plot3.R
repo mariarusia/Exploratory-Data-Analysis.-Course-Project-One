@@ -23,6 +23,11 @@ subdate$Global_active_power <- as.numeric(subdate$Global_active_power)
 
 #this is specific for plot 3
 
+#create the layout
+par(mfrow = c(1, 1))
+
+png(file="plot3.png")
+
 plot(subdate$Time, subdate$Sub_metering_1, type = "n", ylab = "Energy sub metering", xlab = "")
 
 lines(subdate$Time, subdate$Sub_metering_1, col = "gray")
@@ -31,6 +36,5 @@ lines(subdate$Time, subdate$Sub_metering_2, col = "red")
 
 legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty = c(1, 1), col = c("gray", "red", "blue"))
 
-dev.copy(png, file = "plot3.png")
 
 dev.off()
