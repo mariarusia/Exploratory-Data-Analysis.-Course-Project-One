@@ -22,6 +22,9 @@ subdate$Global_active_power <- as.numeric(subdate$Global_active_power)
 
 #this is specific for plot 4
 #planning the layout
+
+png(file="plot4.png")
+
 par(mfrow = c(2, 2))
 
 #upper left
@@ -41,5 +44,4 @@ legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), bty 
 with(subdate, plot(Time, Global_reactive_power, type = "l",  xlab ="datetime"))
 
 
-dev.copy(png, file = "plot4.png")
 dev.off()
